@@ -1,0 +1,23 @@
+table{
+    position: relative;
+    margin: 0 auto;
+    min-width: 950px;
+    max-width: 950px;
+    table-layout: fixed;
+}
+table td{
+    text-align: center;
+    width: 33%;
+    min-width: 33%;
+    padding: 20px;
+}
+table th{
+    padding: 20px;
+}
+.estimatedHours{
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    max-width: 950px;
+    text-align: right;
+}

@@ -1,0 +1,26 @@
+<h1 class="mt-5 mt-5 text-center">{{  user.username  }}</h1>
+
+<span class="estimatedHours">Estimated Hours: {{ projectEstimatedHours }}</span>
+
+<table>
+    <tr>
+        <th style="background-color: rgba(0,0,0,.15);">Task</th>
+        <th style="background-color: rgba(0,0,0,.25);">Project Name</th>
+        <th style="background-color: rgba(0,0,0,.15);">Estimated Hours</th>
+    </tr>
+
+    <tr *ngFor="let task of taskList">
+
+        <td>{{ task.name }}</td>
+
+        <td>
+            {{ task.project.name }}
+        </td>
+
+        <td>
+            {{ task.estimated_hours }}
+        </td>
+
+    </tr>
+
+</table>

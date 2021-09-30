@@ -1,9 +1,15 @@
 // This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  /**
+   * Enter the IP and PORT you are serving your Laravel App on. 
+   * format: https://192.168.1.65:443/
+   * Laravel App will not work if it's not served on port 443 or SSL.
+   * */
+  apiEndpoint: 'http://localhost:8000/api/' 
 };
 
 /*
@@ -13,4 +19,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

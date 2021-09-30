@@ -1,0 +1,39 @@
+<section *ngIf="project.name !== null">
+
+    <div class="pt-5 pb-5"></div>
+
+    <h2 class="text-center">{{ project.name }}</h2>
+
+    <span class="estimatedHours">Estimated Hours: {{ projectEstimatedHours }}</span>
+
+    <table>
+        <tr>
+            <th style="background-color: rgba(0,0,0,.15);">Task</th>
+            <th style="background-color: rgba(0,0,0,.25);">Assigned To</th>
+            <th style="background-color: rgba(0,0,0,.15);">Estimated Hours</th>
+        </tr>
+
+        <tr *ngFor="let task of taskList">
+
+            <td>{{ task.name }}</td>
+            <td>
+                <span *ngFor="let user of task.user_list">
+                    {{ user.username }}
+                </span>
+            </td>
+
+            <td>
+                {{ task.estimated_hours }}
+            </td>
+
+        </tr>
+
+    </table>
+    
+</section>
+
+<section *ngIf="project.name == null && taskListUp">
+
+    <h1>No project selected.</h1>
+
+</section>
