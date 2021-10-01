@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
   constructor(private projectService: ProjectService,
               private router: Router) { }
 
+  public get _projectList(): Array<Project> {
+    return this.projectList
+  }
+
   public getProjects(){
 
     this.projectService.index().subscribe(
@@ -30,16 +34,10 @@ export class HomeComponent implements OnInit {
 
   public getProjectsCb(resp: any){
 
-    console.log("Project", resp)
-
     if(resp.success){
-
       resp.projectList.forEach( (project: Project) => {
-
         this.projectList.push(project)
-
       })
-
     }
 
   }

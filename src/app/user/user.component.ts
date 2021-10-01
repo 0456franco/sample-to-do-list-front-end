@@ -10,8 +10,6 @@ import { UserService } from '../services/user.service';
 })
 export class UserComponent implements OnInit {
 
-  userName: string | null = null
-
   user: User = new User()
 
   taskList: Array<Task>= []
@@ -48,22 +46,28 @@ export class UserComponent implements OnInit {
 
   }
 
+  userIndex(){
+
+  }
+
   ngOnInit(): void {
     
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
 
-    this.userName = urlParams.get('name')
+    
 
+    
+
+    //Find user slug and if none is set, the procceed to list
+    //all the users
     this.user.slug = urlParams.get('name')
+    this.user.username = urlParams.get('name')
 
-    console.log("Username", this.userName)
-
-    if(this.user.slug == null){
-      throw new Error('Username cannot be null.')
-    }
-
-    this.getUser()
+    if(this.user.slug == null) 
+      this.userIndex()
+    else
+      this.getUser()
 
   } 
 

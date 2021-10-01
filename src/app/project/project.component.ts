@@ -82,19 +82,21 @@ export class ProjectComponent implements OnInit {
 
   }
 
+  public projectIndex(){
+    
+  }
+
   ngOnInit(): void {
+
+    //Find the project slug and display the correct project.
+    //If the slug is not found, then display an index of all projects.
 
     this.project.slug = this.activatedRoute.snapshot.paramMap.get('slug')
 
     if(this.project.slug == null){
-    
-      throw new Error('Project name cannot be null.')
-    
+      this.projectIndex()
     } else {
-
-      console.log("Project Name", this.project.slug)
       this.getProject()
-
     }
 
   }
